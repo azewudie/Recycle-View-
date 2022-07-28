@@ -7,7 +7,11 @@ import android.util.Log
 import android.view.Menu
 import android.view.View
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.example.todoapp.ToDoAdapter.ToDoAdapter
 import com.example.todoapp.databinding.ActivityMainBinding
 import java.lang.Object as Object
 
@@ -25,6 +29,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     // using find view by id
     private lateinit var listOfTodos: RecyclerView
+    private lateinit var  adapter: ToDoAdapter
 
     // using viewBinding
     private lateinit var binding:ActivityMainBinding
@@ -85,6 +90,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // method references
         binding.btnSaveTodo.setOnClickListener(::doSomething)
 
+        val linearManager = LinearLayoutManager(this)
+        val gridManager = GridLayoutManager(this,3)
+        val staggeredManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.HORIZONTAL)
+
+
+        binding.rvDisplayTodo.layoutManager = staggeredManager
+        adapter = ToDoAdapter(ArrayList())
+        binding.rvDisplayTodo.adapter =adapter
+
     }
 
     private fun doSomething(view: View?) {
@@ -98,8 +112,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    private fun updateRecyclerView() {
-        TODO("Not Yet implemented")
+    private fun updateRecyclerView(newTodo:String) {
+        adapter.addNewTodoCat(newTodo?.toString())
 
     }
 
