@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">To Do App</string>
+    <string name="add_a_new_todo">Add a new todo</string>
+    <string name="btn_save">Save</string>
+    <string name="save_category">save category</string>
+    <string name="enter_category">Enter category</string>
+    <string name="create_the_new_category">Create the new category</string>
+</resources>

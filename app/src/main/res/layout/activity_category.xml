@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityCategory">
+
+    <EditText
+        android:id="@+id/et_new_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_category"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <Button
+        android:id="@+id/btn_save_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_category"
+        app:layout_constraintTop_toBottomOf="@id/et_new_category"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
